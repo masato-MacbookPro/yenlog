@@ -4,4 +4,9 @@ Rails.application.routes.draw do
       get :change_flow, defaults: { format: :json }
     end
   end
+  resources :categories do
+    collection do
+      get :search, defaults: { format: :json } 
+    end
+  end
 end

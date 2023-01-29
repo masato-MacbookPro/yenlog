@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    models:
+     flow: 支出入
+     category: カテゴリ
+
+    attributes:
+      flow:
+        kind: 種別
+        category: カテゴリ
+        money: 金額
+        memo: メモ
+        date: 日付
+
+      category:
+        name: カテゴリー名

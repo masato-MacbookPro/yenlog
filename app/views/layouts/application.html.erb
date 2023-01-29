@@ -12,6 +12,18 @@
 
   <body>
     <%= render 'layouts/shared/header' %>
+    <% if flash[:notice] %>
+      <div class="alert alert-primary" role="alert">
+        <p><%= notice %></p>
+      </div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="alert alert-danger" role="alert">
+        <p><%= alert %></p>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
