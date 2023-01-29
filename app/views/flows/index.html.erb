@@ -1,7 +1,7 @@
 <% @flows.each do |flow| %>
 <p>
   <%= flow.category.name %>
-  <%= flow.money %>
-  <%= flow.date %>
+  <%= flow.money %>円
+  <%= l flow.date %>
 </p>
 <% end %>
