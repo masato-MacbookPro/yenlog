@@ -16,7 +16,7 @@ r = Random.new
     start_date = Date.new(2023,1,1)
     end_date = Date.new(2023,12,31)
     Flow.create!(
-        kind: false,
+        kind: true,
         date: Random.rand(start_date..end_date),
         money: r.rand(100..10000),
         memo: "支出メモテスト",
@@ -28,7 +28,7 @@ end
     start_date = Date.new(2023,1,1)
     end_date = Date.new(2023,12,31)
     Flow.create!(
-        kind: true,
+        kind: false,
         date: Random.rand(start_date..end_date),
         money: r.rand(100..10000),
         memo: "収入メモテスト",
