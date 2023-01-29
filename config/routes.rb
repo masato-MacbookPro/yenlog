@@ -9,4 +9,7 @@ Rails.application.routes.draw do
       get :search, defaults: { format: :json } 
     end
   end
+  namespace :category do
+    resources :reports
+  end
 end
