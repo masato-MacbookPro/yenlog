@@ -2,26 +2,14 @@
 
 <h3 class="ymd"><%= @month.strftime('%Y/%m') %></h3>
 
-<div class="d-flex">
-  <div class="form-check">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="1" checked>
-    <label class="form-check-label" for="exampleRadios1">
-      支出
-    </label>
-  </div>
-  <div class="form-check ms-2">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="0">
-    <label class="form-check-label" for="exampleRadios2">
-     収入
-    </label>
-  </div>
+<%= link_to "支出", category_reports_path(month: @month, kind: true) %>
+<%= link_to "収入", category_reports_path(month: @month, kind: false) %>
+
+<div class="category_flows">
+  <% @categories.each do |category| %>
+    <p><%= category.name %>: <%= sum_money(category, @month, @kind) %>円</p>
+  <% end %>
 </div>
 
-<% @categories.each do |category| %>
-  <% if category.kind %>
-    <p><%= category.name %>: <%= sum_money(category, @month) %>円</p>
-  <% end %>
-<% end %>
-
-<%= link_to "前の月",category_reports_path(month:@month.prev_month) %>
-<%= link_to "次の月",category_reports_path(month:@month.next_month) %>
+<%= link_to "前の月",category_reports_path(month: @month.prev_month) %>
+<%= link_to "次の月",category_reports_path(month: @month.next_month) %>
