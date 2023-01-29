@@ -1,3 +1,18 @@
+<div class="d-flex">
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+    <label class="form-check-label" for="exampleRadios1">
+      支出
+    </label>
+  </div>
+  <div class="form-check ms-2">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+    <label class="form-check-label" for="exampleRadios2">
+     収入
+    </label>
+  </div>
+</div>
+
 <% @flows.each do |flow| %>
 <p>
   <%= flow.category.name %>
